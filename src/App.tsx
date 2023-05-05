@@ -4,18 +4,17 @@ import { useState } from "react";
 import GlobalStyles from "./GlobalStyles";
 
 function App() {
-  const [fontDiv, setFontDiv] = useState<boolean>(true);
   const [font, setFont] = useState<string>("sansSerif");
+  const [light, setLight] = useState<boolean>(true);
 
   return (
-    <div className="w-full min-h-[100vh] flex flex-col items-center">
+    <div
+      className={`w-full min-h-[100vh] flex flex-col items-center ${
+        light ? "bg-white" : "bg-[#050505]"
+      }`}
+    >
       <GlobalStyles font={font} />
-      <Header
-        fontDiv={fontDiv}
-        setFontDiv={setFontDiv}
-        setFont={setFont}
-        font={font}
-      />
+      <Header setFont={setFont} font={font} light={light} setLight={setLight} />
     </div>
   );
 }
