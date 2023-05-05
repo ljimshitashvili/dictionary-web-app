@@ -11,6 +11,7 @@ function App() {
   const [light, setLight] = useState<boolean>(true);
   const [search, setSearch] = useState<string>("keyboard");
   const [wordData, setWordData] = useState<Types | null>(null);
+  const [result, setResult] = useState<boolean>(true);
 
   return (
     <div
@@ -26,6 +27,8 @@ function App() {
         wordData={wordData}
         setWordData={setWordData}
         light={light}
+        result={result}
+        setResult={setResult}
       />
     </div>
   );
