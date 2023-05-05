@@ -3,6 +3,11 @@ export default interface Types {
   phonetic: string;
   meanings: Array<{
     partOfSpeech: string;
+    definitions: Array<{
+      definition: string;
+    }>;
+    synonyms: Array<string>;
   }>;
   phonetics: Array<{ audio: string }>;
+  sourceUrls: Array<string>;
 }

@@ -9,12 +9,12 @@ import GlobalStyles from "./GlobalStyles";
 function App() {
   const [font, setFont] = useState<string>("sansSerif");
   const [light, setLight] = useState<boolean>(true);
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>("keyboard");
   const [wordData, setWordData] = useState<Types | null>(null);
 
   return (
     <div
-      className={`w-full min-h-[100vh] flex flex-col items-center ${
+      className={`w-full min-h-[100vh] flex flex-col items-center px-6 ${
         light ? "bg-white" : "bg-[#050505]"
       }`}
     >
