@@ -14,7 +14,7 @@ export default function Input({ setSearch, light }: Props) {
 
   return (
     <form
-      className={`w-full h-12 max-w-[327px] flex px-6  items-center rounded-[16px] ${
+      className={`w-full h-12 max-w-[327px] flex px-6  items-center rounded-[16px] md:max-w-[690px] md:h-16 ${
         light ? "bg-[#F4F4F4]" : "bg-[#1F1F1F]"
       }`}
       onSubmit={submitHandler}
@@ -22,7 +22,7 @@ export default function Input({ setSearch, light }: Props) {
       <input
         id="word"
         type="text"
-        className={`w-full h-full outline-0 text-4 leading-[19px] font-bold  ${
+        className={`w-full h-full outline-0 text-4 leading-[19px] font-bold md:text-5 md:leading-[26px]  ${
           light ? "bg-[#F4F4F4] text-[#2D2D2D]" : "bg-[#1F1F1F] text-[#FFFFFF]"
         }`}
       />

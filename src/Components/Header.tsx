@@ -20,15 +20,15 @@ export default function Header({ setFont, light, setLight }: Props) {
   };
 
   return (
-    <header className="flex w-full max-w-[327px] justify-between py-6">
+    <header className="flex w-full max-w-[327px] justify-between py-6 md:max-w-[690px] md:py-[39px]">
       <img src={Logo} alt="Logo" />
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 md:gap-[26px]">
         <div
-          className="flex gap-4 cursor-pointer relative "
+          className="flex gap-[16px] cursor-pointer relative md:gap-[18px]"
           onClick={handleClick}
         >
           <h1
-            className={`text-[14px] leading-6  normal font-bold ${
+            className={`text-[14px] leading-6  normal font-bold md:text-[18px] ${
               light ? "text-[#2D2D2D]" : "text-white"
             }`}
           >
@@ -36,12 +36,12 @@ export default function Header({ setFont, light, setLight }: Props) {
           </h1>
           <img src={Arrow} alt="Arrow Icon" />
           <div
-            className={`min-w-[100px] absolute -left-3 top-8  p-3 rounded-[8px] shadow-lg  ${
+            className={`min-w-[100px] absolute -left-3 top-8  p-3 rounded-[8px] shadow-lg flex flex-col gap-2 md:gap-4 ${
               fontDiv ? "hidden" : "block"
             } ${light ? "bg-white" : "bg-[#050505] shadow-[#A445ED]"}`}
           >
             <p
-              className={` text-[14px] leading-6 text-[#2D2D2D] ${
+              className={` text-[14px] leading-6 text-[#2D2D2D] md:text-[18px] ${
                 light ? "text-[#2D2D2D]" : "text-white"
               }`}
               onClick={() => {
@@ -52,7 +52,7 @@ export default function Header({ setFont, light, setLight }: Props) {
               Sans Serif
             </p>
             <p
-              className={` text-[14px] leading-6 text-[#2D2D2D] ${
+              className={` text-[14px] leading-6 text-[#2D2D2D] md:text-[18px] ${
                 light ? "text-[#2D2D2D]" : "text-white"
               }`}
               onClick={() => {
@@ -63,7 +63,7 @@ export default function Header({ setFont, light, setLight }: Props) {
               Serif
             </p>
             <p
-              className={` text-[14px] leading-6 text-[#2D2D2D] ${
+              className={` text-[14px] leading-6 text-[#2D2D2D] md:text-[18px] ${
                 light ? "text-[#2D2D2D]" : "text-white"
               }`}
               onClick={() => {

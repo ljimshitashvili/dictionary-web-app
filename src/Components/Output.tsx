@@ -46,24 +46,26 @@ export default function Output({
   };
 
   return (
-    <div className={`w-full max-w-[327px] my-6`}>
+    <div className={`w-full max-w-[327px] my-6 md:max-w-[690px] md:my-[50px] `}>
       <div className={`flex justify-between items-center`}>
         <div className={`flex flex-col gap-2`}>
           <h1
-            className={`text-[32px] leading-[38px] font-bold ${
+            className={`text-[32px] leading-[38px] font-bold md:text-[64px] md:leading-[67px] ${
               light ? "text-[#2D2D2D]" : "text-[#FFFFFF]"
             }`}
           >
             {wordData?.word}
           </h1>
-          <h2 className={`text-[18px] leading-6 text-[#A445ED] font-normal`}>
+          <h2
+            className={`text-[18px] leading-6 text-[#A445ED] font-normal md:text-[18px] md:leading-[29px]`}
+          >
             {wordData?.phonetic}
           </h2>
         </div>
         <img
           src={playIcon}
           alt="Play Icon"
-          className="w-12 h-12 cursor-pointer"
+          className="w-12 h-12 cursor-pointer md:w-[75px] md:h-[75px]"
           onClick={playAudio}
         />
       </div>
@@ -71,7 +73,7 @@ export default function Output({
         <div key={index}>
           <div className={`flex gap-4 items-center my-[30px]`}>
             <p
-              className={` text-[18px] leading-5 font-bold italic ${
+              className={` text-[18px] leading-5 font-bold italic md:text-[24px] md:leading-[25px] ${
                 light ? "text-[#2D2D2D]" : "text-[#FFFFFF]"
               }`}
             >
@@ -84,15 +86,17 @@ export default function Output({
             />
           </div>
           <h1
-            className={`font-normal text-4 leading-[19px] text-[#757575] mb-[17px]`}
+            className={`font-normal text-4 leading-[19px] text-[#757575] mb-[17px] md:text-5 md:leading-6`}
           >
             Meaning
           </h1>
           {meaning.definitions.map((explain, index) => (
-            <ul className={`list-disc text-[#8F19E8] max-w-[302px] ml-5`}>
+            <ul
+              className={`list-disc text-[#8F19E8] max-w-[302px] ml-5 md:max-w-[690px] md:ml-[43px]`}
+            >
               <li key={index}>
                 <h1
-                  className={` text-[15px] leading-6 mb-[13px] 
+                  className={` text-[15px] leading-6 mb-[13px] md:text-[18px] 
                 ${light ? "text-black" : "text-[#FFFFFF]"}`}
                 >
                   {explain.definition}
@@ -124,7 +128,7 @@ export default function Output({
       />
       <div>
         <h1
-          className={`text-[14px] leading-[17px] font-normal text-[#757575] underline`}
+          className={`text-[14px] leading-[17px] font-normal text-[#757575] underline `}
         >
           Source
         </h1>
