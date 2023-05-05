@@ -8,9 +8,15 @@ interface Props {
   search: string;
   wordData: Types | null;
   setWordData: (wordData: null) => void;
+  light: boolean;
 }
 
-export default function Output({ search, wordData, setWordData }: Props) {
+export default function Output({
+  search,
+  wordData,
+  setWordData,
+  light,
+}: Props) {
   useEffect(() => {
     const findWord = async () => {
       try {
@@ -25,7 +31,7 @@ export default function Output({ search, wordData, setWordData }: Props) {
     };
     findWord();
   }, [search]);
-  console.log(wordData);
+  console.log(light);
 
   const playAudio = () => {
     const phonetics = wordData?.phonetics ?? [];
@@ -42,7 +48,11 @@ export default function Output({ search, wordData, setWordData }: Props) {
     <div className={`w-full max-w-[327px] my-6`}>
       <div className={`flex justify-between items-center`}>
         <div className={`flex flex-col gap-2`}>
-          <h1 className={`text-[32px] leading-[38px] text-[#2D2D2D] font-bold`}>
+          <h1
+            className={`text-[32px] leading-[38px] font-bold ${
+              light ? "text-[#2D2D2D]" : "text-[#FFFFFF]"
+            }`}
+          >
             {wordData?.word}
           </h1>
           <h2 className={`text-[18px] leading-6 text-[#A445ED] font-normal`}>
@@ -60,11 +70,17 @@ export default function Output({ search, wordData, setWordData }: Props) {
         <div key={index}>
           <div className={`flex gap-4 items-center my-[30px]`}>
             <p
-              className={`text-[#2D2D2D] text-[18px] leading-5 font-bold italic`}
+              className={` text-[18px] leading-5 font-bold italic ${
+                light ? "text-[#2D2D2D]" : "text-[#FFFFFF]"
+              }`}
             >
               {meaning.partOfSpeech}
             </p>
-            <hr className={`w-full h-[1px]`} />
+            <hr
+              className={`w-full h-[1px] my-6  ${
+                light ? "bg-[#E9E9E9]" : "bg-[#3A3A3A] opacity-50"
+              }`}
+            />
           </div>
           <h1
             className={`font-normal text-4 leading-[19px] text-[#757575] mb-[17px]`}
@@ -74,7 +90,10 @@ export default function Output({ search, wordData, setWordData }: Props) {
           {meaning.definitions.map((explain, index) => (
             <ul className={`list-disc text-[#8F19E8] max-w-[302px] ml-5`}>
               <li key={index}>
-                <h1 className={`text-black text-[15px] leading-6 mb-[13px] `}>
+                <h1
+                  className={` text-[15px] leading-6 mb-[13px] 
+                ${light ? "text-black" : "text-[#FFFFFF]"}`}
+                >
                   {explain.definition}
                 </h1>
               </li>
@@ -97,7 +116,11 @@ export default function Output({ search, wordData, setWordData }: Props) {
           ))}
         </div>
       ))}
-      <hr className={`w-full h-[1px] my-6`} />
+      <hr
+        className={`w-full h-[1px] my-6  ${
+          light ? "bg-[#E9E9E9]" : "bg-[#3A3A3A] opacity-50"
+        }`}
+      />
       <div>
         <h1
           className={`text-[14px] leading-[17px] font-normal text-[#757575] underline`}
@@ -105,7 +128,9 @@ export default function Output({ search, wordData, setWordData }: Props) {
           Source
         </h1>
         <h2
-          className={`text-[14px] leading-[17px] font-normal text-[#2D2D2D] underline mt-2`}
+          className={`text-[14px] leading-[17px] font-normal underline mt-2 ${
+            light ? "text-[#2D2D2D]" : "text-[#FFFFFF]"
+          }`}
         >
           {wordData?.sourceUrls}
         </h2>

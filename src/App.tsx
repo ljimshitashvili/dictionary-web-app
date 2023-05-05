@@ -21,7 +21,12 @@ function App() {
       <GlobalStyles font={font} />
       <Header setFont={setFont} font={font} light={light} setLight={setLight} />
       <Input search={search} setSearch={setSearch} light={light} />
-      <Output search={search} wordData={wordData} setWordData={setWordData} />
+      <Output
+        search={search}
+        wordData={wordData}
+        setWordData={setWordData}
+        light={light}
+      />
     </div>
   );
 }
