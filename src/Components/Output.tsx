@@ -57,7 +57,7 @@ export default function Output({
     <div
       className={`w-full max-w-[327px] my-6 md:max-w-[690px] md:my-[50px] lg:max-w-[736px] `}
     >
-      <NoResult result={result} />
+      <NoResult result={result} search={search} />
       <div className={`${result ? "" : "hidden"}`}>
         <div className={`flex justify-between items-center`}>
           <div className={`flex flex-col gap-2`}>

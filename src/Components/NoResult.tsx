@@ -2,13 +2,14 @@ import emoji from "../assets/images/emoji.png";
 
 interface Props {
   result: boolean;
+  search: string;
 }
 
-export default function NoResult({ result }: Props) {
+export default function NoResult({ search, result }: Props) {
   return (
     <div
       className={`flex-col items-center gap-6 lg:mt-[132px] ${
-        result ? "hidden" : "flex"
+        result || search === "" ? "hidden" : "flex"
       }`}
     >
       <img src={emoji} alt="Emoji" className={`w-16 h-16 mb-5`} />
