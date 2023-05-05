@@ -77,14 +77,14 @@ export default function Header({ setFont, light, setLight }: Props) {
         </div>
         <hr className="w-[1px] h-8 bg-[#E9E9E9] border-0" />
         <label
-          onClick={() => {
-            setLight(!light);
-          }}
           className={`w-10 h-5 bg-[#757575] rounded-[10px] px-[3px] flex items-center cursor-pointer ${
             light ? "bg-[#757575]" : "bg-[#A445ED]"
           }`}
         >
           <input
+            onClick={() => {
+              setLight(!light);
+            }}
             type="checkbox"
             className={`w-[14px] h-[14px] appearance-none bg-white rounded-full cursor-pointer transition-all ${
               light ? "translate-x-0" : "translate-x-5"
