@@ -46,18 +46,20 @@ export default function Output({
   };
 
   return (
-    <div className={`w-full max-w-[327px] my-6 md:max-w-[690px] md:my-[50px] `}>
+    <div
+      className={`w-full max-w-[327px] my-6 md:max-w-[690px] md:my-[50px] lg:max-w-[736px] `}
+    >
       <div className={`flex justify-between items-center`}>
         <div className={`flex flex-col gap-2`}>
           <h1
-            className={`text-[32px] leading-[38px] font-bold md:text-[64px] md:leading-[67px] ${
+            className={`text-[32px] leading-[38px] font-bold md:text-[64px] md:leading-[67px] lg:leading-[77px] ${
               light ? "text-[#2D2D2D]" : "text-[#FFFFFF]"
             }`}
           >
             {wordData?.word}
           </h1>
           <h2
-            className={`text-[18px] leading-6 text-[#A445ED] font-normal md:text-[18px] md:leading-[29px]`}
+            className={`text-[18px] leading-6 text-[#A445ED] font-normal md:text-[18px] md:leading-[29px] lg:text-[24px] `}
           >
             {wordData?.phonetic}
           </h2>
