@@ -45,22 +45,25 @@ export default function Definition({ wordData, light, search }: Props) {
               </li>
             </ul>
           ))}
-          {meaning.synonyms.map((synonym, index) => (
-            <div className={`flex gap-6 items-center mt-10`}>
-              <h1
-                className={`font-normal text-4 leading-[19px] text-[#757575]`}
-              >
-                Synonyms
-              </h1>
-              <h2
-                id="synonym"
-                className={`text-[#A445ED] font-bold text-4 leading-[19px] cursor-pointer hover:underline`}
+
+          <div className="flex gap-3">
+            <h1 className={`font-normal text-4 leading-[19px] text-[#757575]`}>
+              Synonyms
+            </h1>
+            {meaning.synonyms.map((synonym, index) => (
+              <div
+                className={`flex gap-6 items-center flex-row w-fit `}
                 key={index}
               >
-                {synonym}
-              </h2>
-            </div>
-          ))}
+                <h2
+                  id="synonym"
+                  className={`text-[#A445ED] font-bold text-4 leading-[19px] cursor-pointer hover:underline`}
+                >
+                  {synonym}
+                </h2>
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
