@@ -34,8 +34,9 @@ export default function Definition({ wordData, light, search }: Props) {
           {meaning.definitions.map((explain, index) => (
             <ul
               className={`list-disc text-[#8F19E8] max-w-[302px] ml-5 md:max-w-[690px] md:ml-[43px]`}
+              key={index}
             >
-              <li key={index}>
+              <li>
                 <h1
                   className={` text-[15px] leading-6 mb-[13px] md:text-[18px] 
                 ${light ? "text-black" : "text-[#FFFFFF]"}`}
