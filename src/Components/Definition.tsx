@@ -47,13 +47,13 @@ export default function Definition({ wordData, light, search }: Props) {
             </ul>
           ))}
 
-          <div className="flex gap-3 max-w-[327px] md:max-w-[690px] lg:max-w-[736px]">
+          <div className="flex gap-3 max-w-[327px] md:max-w-[690px] lg:max-w-[736px] flex-wrap">
             <h1 className={`font-normal text-4 leading-[19px] text-[#757575]`}>
               Synonyms
             </h1>
             {meaning.synonyms.map((synonym, index) => (
               <div
-                className={`flex gap-6 items-center flex-row w-fit `}
+                className={`flex gap-6 items-center flex-row w-fit flex-wrap`}
                 key={index}
               >
                 <h2
