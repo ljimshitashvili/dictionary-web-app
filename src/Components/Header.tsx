@@ -21,7 +21,14 @@ export default function Header({ setFont, light, setLight }: Props) {
 
   return (
     <header className="flex w-full max-w-[327px] justify-between py-6 md:max-w-[690px] md:py-[39px] lg:max-w-[736px] lg:py-[58px]">
-      <img src={Logo} alt="Logo" />
+      <img
+        src={Logo}
+        alt="Logo"
+        onClick={() => {
+          location.reload();
+        }}
+        className="cursor-pointer"
+      />
       <div className="flex items-center gap-4 md:gap-[26px]">
         <div
           className="flex gap-[16px] cursor-pointer relative md:gap-[18px]"

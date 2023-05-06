@@ -3,9 +3,10 @@ import emoji from "../assets/images/emoji.png";
 interface Props {
   result: boolean;
   search: string;
+  light: boolean;
 }
 
-export default function NoResult({ search, result }: Props) {
+export default function NoResult({ search, result, light }: Props) {
   return (
     <div
       className={`flex-col items-center gap-6 lg:mt-[132px] ${
@@ -13,7 +14,11 @@ export default function NoResult({ search, result }: Props) {
       }`}
     >
       <img src={emoji} alt="Emoji" className={`w-16 h-16 mb-5`} />
-      <h1 className={`text-5 leading-6 font-bold text-[#2D2D2D]`}>
+      <h1
+        className={`text-5 leading-6 font-bold  ${
+          light ? "text-[#2D2D2D]" : "text-white"
+        }`}
+      >
         No Definitions Found
       </h1>
       <p

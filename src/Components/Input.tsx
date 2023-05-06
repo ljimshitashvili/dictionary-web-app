@@ -23,11 +23,11 @@ export default function Input({ search, setSearch, light }: Props) {
         <input
           id="word"
           type="text"
-          className={`w-full h-full outline-0 px-6 text-4 rounded-[16px] leading-[19px] font-bold md:text-5 md:leading-[26px]  ${
+          className={`w-full h-full outline-0 hover:border-[1px] hover:border-[#A445ED] cursor-pointer px-6 text-4 rounded-[16px] leading-[19px] font-bold md:text-5 md:leading-[26px]  ${
             light
               ? "bg-[#F4F4F4] text-[#2D2D2D]"
               : "bg-[#1F1F1F] text-[#FFFFFF]"
-          } ${search === "" ? "outline-1 outline-[red]" : "outline-none"}`}
+          } ${search === "" ? "border-[1px] border-[red]" : "outline-none"}`}
         />
         <button type="submit">
           <img

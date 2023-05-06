@@ -10,6 +10,7 @@ import Source from "./Source.tsx";
 
 interface Props {
   search: string;
+  setSearch: (search: string) => void;
   wordData: Types | null;
   setWordData: (wordData: null) => void;
   light: boolean;
@@ -19,6 +20,7 @@ interface Props {
 
 export default function Output({
   search,
+  setSearch,
   wordData,
   setWordData,
   light,
@@ -57,7 +59,7 @@ export default function Output({
     <div
       className={`w-full max-w-[327px] my-6 md:max-w-[690px] md:my-[50px] lg:max-w-[736px] `}
     >
-      <NoResult result={result} search={search} />
+      <NoResult result={result} search={search} light={light} />
       <div className={`${result ? "" : "hidden"}`}>
         <div className={`flex justify-between items-center`}>
           <div className={`flex flex-col gap-2`}>
@@ -81,7 +83,12 @@ export default function Output({
             onClick={playAudio}
           />
         </div>
-        <Definition wordData={wordData} light={light} />
+        <Definition
+          wordData={wordData}
+          light={light}
+          setSearch={setSearch}
+          search={search}
+        />
         <hr
           className={`w-full h-[1px] my-6  ${
             light ? "bg-[#E9E9E9]" : "bg-[#3A3A3A] opacity-50"

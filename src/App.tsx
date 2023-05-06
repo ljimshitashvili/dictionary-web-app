@@ -24,6 +24,7 @@ function App() {
       <Input search={search} setSearch={setSearch} light={light} />
       <Output
         search={search}
+        setSearch={setSearch}
         wordData={wordData}
         setWordData={setWordData}
         light={light}

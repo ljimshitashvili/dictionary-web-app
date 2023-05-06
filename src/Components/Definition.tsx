@@ -3,8 +3,11 @@ import Types from "../types";
 interface Props {
   wordData: Types | null;
   light: boolean;
+  search: string;
+  setSearch: (search: string) => void;
 }
-export default function Definition({ wordData, light }: Props) {
+export default function Definition({ wordData, light, search }: Props) {
+  console.log(search);
   return (
     <div>
       {wordData?.meanings.map((meaning, index) => (
@@ -50,7 +53,8 @@ export default function Definition({ wordData, light }: Props) {
                 Synonyms
               </h1>
               <h2
-                className={`text-[#A445ED] font-bold text-4 leading-[19px]`}
+                id="synonym"
+                className={`text-[#A445ED] font-bold text-4 leading-[19px] cursor-pointer hover:underline`}
                 key={index}
               >
                 {synonym}
