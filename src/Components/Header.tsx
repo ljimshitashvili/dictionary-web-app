@@ -43,9 +43,10 @@ export default function Header({ setFont, light, setLight }: Props) {
           </h1>
           <img src={Arrow} alt="Arrow Icon" />
           <div
-            className={`min-w-[100px] absolute -left-3 top-8  p-3 rounded-[8px] shadow-lg flex flex-col gap-2 md:gap-4 lg:w-[183px] ${
+            className={`min-w-[100px] absolute -left-3 top-8 z-10 p-3 rounded-[8px] shadow-lg flex flex-col gap-2 md:gap-4 lg:w-[183px] ${
               fontDiv ? "hidden" : "block"
-            } ${light ? "bg-white" : "bg-[#050505] shadow-[#A445ED]"}`}
+            } ${light ? "bg-white" : "bg-[#050505] shadow-[#A445ED]"}
+            `}
           >
             <p
               className={` text-[14px] leading-6 text-[#2D2D2D] md:text-[18px] font-sans ${
